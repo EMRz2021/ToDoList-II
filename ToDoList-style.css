@@ -1,0 +1,283 @@
+body {
+  background-color: #ebecee;
+  background-image: url(./BGs/BG009.jpg);
+  background-size: cover;
+  height: 525px;
+  background-attachment: fixed;
+  background-position: top;
+  overflow: hidden;
+}
+
+.container {
+  width: 575px;
+  max-height: 98vh;
+  background: #ebecee;
+  border-radius: 25px 0px;
+  padding-top: 0 15px;
+  box-shadow: 0 0 3px #000,
+              5px 5px 10px #000a;
+  position: fixed;
+  top: 1vh;
+  left: 100px;
+  transform: skewX(5deg);
+}
+
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.currentDate {
+  text-align: center;
+  font-family: 'Cooper Black', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 5px;
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: #ebecee;
+  text-shadow: 0 0 5px #370f0f;
+}
+#currentDateTxt {
+  float: left;
+}
+#currentTimeClockTxt {
+  float: right;
+}
+
+#title {
+  text-align: center;
+  font-family: Chiller, Arial, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: dimgrey;
+  margin: 0;
+  cursor: context-menu;
+}
+
+#list {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: auto;
+  height: 80vh;
+  margin-right: 2px;
+  padding: 5px 0 5px 0;
+  box-sizing: border-box;
+  border: 5px solid #ebecee;
+  border-width: 0 5px;
+  box-shadow: inset -2px -2px 2px #fff,
+              inset 3px 3px 5px #0008;
+}
+#list::-webkit-scrollbar {
+  display: none;
+}
+
+ul {
+  padding: 0 10px;
+  margin: 10px 10px auto 10px;
+  list-style: none;
+}
+
+.item {
+  background: #c9cbcf;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;  
+  padding: 3px 3px 3px 3px;
+  margin-bottom: 10px;
+  border-radius: 7px 0px 7px 0px;
+  box-shadow: inset 3px 3px 3px #fff,
+              inset -1px -1px 2px #444450,
+              2px 2px 2px #444450;
+}
+
+.doneItem {
+  background: #93969d;
+  box-shadow:inset 2px 2px 2px #444450,
+             inset -2px -2px 2px #fff;
+}
+
+.itemShow {
+  animation: createItem 1s;
+}
+
+@keyframes createItem {
+	from {
+    transform: rotateY(90deg);
+	}
+}
+
+.doneBtn, .delBtn {
+  background: #0000;
+  border: none;
+  width: 30px;
+  color: #444450;
+}
+
+.doneBtn {
+  border-radius: 10px 0px 0px 10px;
+}
+
+.delBtn {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.doneBtn:hover, .delBtn:hover {
+  background: #444450;
+  cursor: pointer;
+  color: #93969d;
+}
+
+.doneBtn:active, .delBtn:active {
+  background: #0000;
+  color: #444450;
+  border: 1px solid #444450;
+}
+
+li {
+  font-family: 'Cooper Black', Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #444450;
+  margin-left: 5px;
+}
+
+#date {
+  border-radius: 5px 5px 5px 5px;
+  font-family: 'Cooper Black', Arial, sans-serif;
+  font-size: 0.8rem;
+  color: #444450;
+  margin-left: auto;
+  padding-top: 3px;
+}
+
+.dateValue {
+  letter-spacing: 0.1rem;
+  cursor: context-menu;
+}
+
+.dateInput {
+  background: #0000;
+  border: none;
+  border-radius: 3px;
+  width: 17px;
+  cursor: context-menu;  
+}
+
+.dateInput:hover {
+  background-color: #444450;
+}
+
+.doneText {
+  color: #0000;
+  text-shadow: 0 0 4px #444450;
+}
+
+#userEnter {
+  width: 100%;
+  background: #ebecee;
+  text-align: center;
+  position: sticky;
+  bottom: 0px;
+  padding:10px 0 15px 0;
+  box-shadow: 0 -2px 5px #fff;
+}
+
+#userInput {
+  font-family: 'Cooper Black', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #000;
+  background: #fff;
+  border-color: #fff;
+  width: 80%;
+  height: 21px;
+  border-radius: 7px 0px 7px 0px;
+  box-shadow: inset -1px -1px 2px #fff,
+              inset 1px 1px 2px #000;
+}
+
+#userInput:hover {
+  border-color: #666;
+}
+
+#userInput::placeholder {
+  font-family: 'Cooper Black', Arial, sans-serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-decoration: underline;
+  color: #bbb;
+}
+
+#enter {
+  width: 10%;
+  background: #0000;
+  border: none;
+  border-radius: 10px 0px 10px 0px;
+  color: #444450;
+  font-size: 1.1rem;
+  font-weight:bold;
+  text-align: center;
+  padding: 6px 0 2px 0;
+}
+
+#enter:hover {
+  background: #444450;
+  cursor: pointer;
+  color: #ebecee;
+}
+
+#enter:active {
+  background: #0000;
+  color: #444450;
+  border: 1px solid #444450;
+}
+
+@media only screen and (max-width: 960px) {
+  body {
+    background-position: right;
+  }
+  .container {
+    width: 60%;
+    left: 50px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  body {
+    background-color: #ebecee;
+    background-image: none;
+  }
+  .container {
+    width: 90%;
+    left: 30px;
+    transform: skewX(0deg);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #dateDiv{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    text-align: center;
+  }
+  .currentDate {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+  }
+  #currentDateTxt {
+    float: none;
+    clear: both;
+  }
+  #currentTimeClockTxt {
+    float: none;
+    clear: both;
+  }
+  #title {
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding: 13px 0 0 0;
+  }
+}
