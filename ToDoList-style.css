@@ -9,23 +9,50 @@ body {
 }
 
 .container {
-  width: 575px;
-  max-height: 98vh;
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  height: 97vh;
   background: #ebecee;
   border-radius: 25px 0px;
-  padding-top: 0 15px;
   box-shadow: 0 0 3px #000,
               5px 5px 10px #000a;
-  position: fixed;
-  top: 1vh;
-  left: 100px;
-  transform: skewX(5deg);
+  transform: translate(15%, 0) skewX(5deg);
+  overflow: hidden;
 }
 
 .header {
+  background: #ebecee;
   width: 100%;
   box-sizing: border-box;
   padding: 0 10px;
+  box-shadow: 0 2px 2px #000;
+}
+
+#list {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  box-sizing: border-box;
+  height: auto;
+  padding: 5px 0 5px 0;
+  border: solid #ebecee;
+  border-width: 0 5px;
+  box-shadow: inset -2px -2px 2px #fff,
+              inset 3px 3px 5px #0008;
+  overflow: auto;
+}
+#list::-webkit-scrollbar {
+  display: none;
+}
+
+#userEnter {
+  width: 100%;
+  background: #ebecee;
+  text-align: center;
+  padding:10px 0 15px 0;
+  box-shadow: 0 -2px 5px #fff;
 }
 
 .currentDate {
@@ -33,11 +60,12 @@ body {
   font-family: 'Cooper Black', Arial, sans-serif;
   font-size: 1rem;
   font-weight: bold;
-  line-height: 5px;
   letter-spacing: 4px;
   word-spacing: -8px;
   color: #ebecee;
   text-shadow: 0 0 5px #370f0f;
+  margin: 0;
+  padding: 10px 0;
 }
 #currentDateTxt {
   float: left;
@@ -55,23 +83,6 @@ body {
   color: dimgrey;
   margin: 0;
   cursor: context-menu;
-}
-
-#list {
-  display: flex;
-  flex-direction: column-reverse;
-  overflow: auto;
-  height: 80vh;
-  margin-right: 2px;
-  padding: 5px 0 5px 0;
-  box-sizing: border-box;
-  border: 5px solid #ebecee;
-  border-width: 0 5px;
-  box-shadow: inset -2px -2px 2px #fff,
-              inset 3px 3px 5px #0008;
-}
-#list::-webkit-scrollbar {
-  display: none;
 }
 
 ul {
@@ -174,16 +185,6 @@ li {
   text-shadow: 0 0 4px #444450;
 }
 
-#userEnter {
-  width: 100%;
-  background: #ebecee;
-  text-align: center;
-  position: sticky;
-  bottom: 0px;
-  padding:10px 0 15px 0;
-  box-shadow: 0 -2px 5px #fff;
-}
-
 #userInput {
   font-family: 'Cooper Black', Arial, sans-serif;
   font-size: 0.9rem;
@@ -239,7 +240,7 @@ li {
   }
   .container {
     width: 60%;
-    left: 50px;
+    transform: translate(10%, 0) skewX(5deg);
   }
 }
 
@@ -250,12 +251,16 @@ li {
   }
   .container {
     width: 90%;
-    left: 30px;
-    transform: skewX(0deg);
+    height: 90vh;
+    transform: translate(5%, 0) skewX(0deg);
   }
 }
 
 @media only screen and (max-width: 550px) {
+  .header {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   #dateDiv{
     display: flex;
     justify-content: space-around;
